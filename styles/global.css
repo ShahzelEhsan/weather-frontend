@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global body styles */
+body {
+  @apply bg-gray-50 text-gray-800 antialiased dark:bg-gray-900 dark:text-white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Global html styles */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Headings */
+h1 {
+  @apply text-3xl font-bold mb-4;
+}
+h2 {
+  @apply text-2xl font-semibold mb-3;
+}
+h3 {
+  @apply text-xl font-semibold mb-2;
+}
+h4, h5, h6 {
+  @apply font-medium mb-1;
+}
+
+/* Paragraphs */
+p {
+  @apply mb-4 leading-relaxed;
+}
+
+/* Links */
+a {
+  @apply text-blue-600 hover:underline dark:text-blue-400;
+}
+
+/* Form & interactive elements transition */
+button,
+a,
+input,
+textarea,
+select {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Scrollbar styling for WebKit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* Scrollbar styling for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+  outline: 2px solid #3b82f6; /* Tailwind blue-500 */
+  outline-offset: 2px;
+}
+
+/* Text selection styling */
+::selection {
+  @apply bg-blue-200 text-gray-900 dark:bg-blue-600 dark:text-white;
+}
+
+/* Page fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
