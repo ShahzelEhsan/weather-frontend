@@ -16,11 +16,10 @@
       "incremental": true,
       "baseUrl": ".",
       "paths": {
-        "@/*": ["./*"]
+        "@/*": ["frontend/*"]
       }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "globals.d.ts"],
     "exclude": ["node_modules"]
   }
-  
   
