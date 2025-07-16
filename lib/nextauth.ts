@@ -1,10 +1,11 @@
+// lib/nextauth.ts
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import { authOptions } from '@/lib/auth';  // Import from clean path without brackets
 import type { GetServerSidePropsContext } from 'next';
 import type { Session } from 'next-auth';
 
 /**
- * Get server-side session for protected pages
+ * Helper to get the session on server side in getServerSideProps or API routes
  */
 export async function getServerAuthSession(
   ctx: GetServerSidePropsContext
