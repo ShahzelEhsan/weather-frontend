@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 import { getSession, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import dynamic from 'next/dynamic';
 
 import SearchBar from '@/components/SearchBar';
-import RadarMap from '@/components/RadarMap';
+const RadarMap = dynamic(() => import('@/components/RadarMap'), { ssr: false }); // Fix: dynamic import with SSR disabled
 import { useWeather } from '@/context/WeatherContext';
 
 interface SavedLocation {
@@ -139,5 +140,3 @@ export async function getServerSideProps(context: any) {
   }
   return { props: { session } };
 }
-
-
