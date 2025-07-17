@@ -20,6 +20,7 @@
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.4.3",
@@ -39,4 +40,3 @@
     "typescript": "^5.8.3"
   }
 }
-
